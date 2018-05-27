@@ -44,7 +44,7 @@ devserver:
 .PHONY: assets
 
 assets:
-	cd assets && make
+	yarn run gulp
 
 # ----------------------------------------------------------------------
 # Testing

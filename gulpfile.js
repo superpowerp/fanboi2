@@ -18,41 +18,44 @@ var tsify = require("tsify");
 var paths = {
     /* Path for storing application-specific assets. */
     app: {
-        assets: "app/assets/*",
+        assets: "assets/app/assets/*",
         stylesheets: [
-            "app/stylesheets/app.scss",
-            "app/stylesheets/*.scss",
-            "app/stylesheets/themes/*.scss",
+            "assets/app/stylesheets/app.scss",
+            "assets/app/stylesheets/*.scss",
+            "assets/app/stylesheets/themes/*.scss",
         ],
         javascripts: {
-            glob: "app/javascripts/**/*.ts",
-            base: "app/javascripts/",
-            entry: "app/javascripts/app.ts",
+            glob: "assets/app/javascripts/**/*.ts",
+            base: "assets/app/javascripts/",
+            entry: "assets/app/javascripts/app.ts",
         },
     },
 
     /* Path for storing admin-specific assets. */
     admin: {
-        assets: "admin/assets/*",
-        stylesheets: ["admin/stylesheets/*.scss", "admin/stylesheets/themes/*.scss"],
+        assets: "assets/admin/assets/*",
+        stylesheets: [
+            "assets/admin/stylesheets/*.scss",
+            "assets/admin/stylesheets/themes/*.scss",
+        ],
     },
 
     /* Path for storing third-party assets. */
     vendor: {
-        assets: "vendor/assets/*",
-        stylesheets: "vendor/stylesheets/**/*.css",
-        javascripts: ["vendor/javascripts/**/*.js"],
+        assets: "assets/vendor/assets/*",
+        stylesheets: "assets/vendor/stylesheets/**/*.css",
+        javascripts: ["assets/vendor/javascripts/**/*.js"],
     },
 
     /* Path for storing compatibility assets. */
     legacy: {
-        assets: "legacy/assets/*",
-        stylesheets: "legacy/stylesheets/**/*.css",
-        javascripts: "legacy/javascripts/**/*.js",
+        assets: "assets/legacy/assets/*",
+        stylesheets: "assets/legacy/stylesheets/**/*.css",
+        javascripts: "assets/legacy/javascripts/**/*.js",
     },
 
     /* Path to output compiled assets to. */
-    dest: "../fanboi2/static",
+    dest: "fanboi2/static",
 };
 
 /* Assets
