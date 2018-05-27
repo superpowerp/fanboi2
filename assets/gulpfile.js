@@ -84,7 +84,7 @@ var postcssProcessors = [
             return url + "?h=" + hash.slice(0, 8);
         },
     }),
-    require("csswring"),
+    require("cssnano")({ present: "default" }),
 ];
 
 gulp.task("styles/app", ["assets"], function() {

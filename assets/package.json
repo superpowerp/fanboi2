@@ -13,7 +13,7 @@
         "autoprefixer": "^8.5.1",
         "browserify": "^16.2.2",
         "css-mqpacker": "^6.0.2",
-        "csswring": "^6.0.3",
+        "cssnano": "^3.10.0",
         "dom4": "^2.0.1",
         "domready": "^1.0.8",
         "event-stream": "^3.3.4",
