@@ -2,7 +2,6 @@
 
 init:
 	yarn
-	yarn run typings install
 	yarn run gulp
 
 watch:

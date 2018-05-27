@@ -18,5 +18,5 @@ repos:
         name: prettier
         entry: prettier --write
         language: node
-        files: \.(scss|ts|js)$
+        files: \.(scss|ts|js|json)$
         additional_dependencies: ['prettier']

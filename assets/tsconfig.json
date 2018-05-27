@@ -1,11 +1,13 @@
 {
-  "compilerOptions": {
-    "module": "commonjs",
-    "noImplicitAny": true,
-    "strictNullChecks": true
-  },
-  "files": [
-    "typings/index.d.ts",
-    "assets/app/javascripts/app.ts"
-  ]
+    "compilerOptions": {
+        "lib": ["DOM", "ES6", "ScriptHost"],
+        "module": "CommonJS",
+        "noImplicitAny": true,
+        "preserveConstEnums": true,
+        "removeComments": true,
+        "sourceMap": true,
+        "strictNullChecks": true,
+        "target": "ES5"
+    },
+    "files": ["app/javascripts/app.ts"]
 }
