@@ -11,7 +11,6 @@ export class BoardSelector extends SingletonComponent {
     public targetSelector = "[data-board-selector]";
 
     protected bindOne($element: Element): void {
-        let $button: Element;
         let $selector: Element | undefined;
         let selectorView: BoardSelectorView | undefined;
         let selectorNode: VNode | undefined;
@@ -67,37 +66,35 @@ export class BoardSelector extends SingletonComponent {
             requestAnimationFrame(_animateStep);
         };
 
-        $button = create(
-            h("div", { className: "js-board-selector-button" }, [
-                h("a", { href: "#" }, ["Boards"]),
-            ]),
-        );
-
-        $button.addEventListener("click", e => {
-            e.preventDefault();
-            _render().then(() => {
-                if ($selector) {
-                    let selectorHeight = BoardSelector.getSelectorHeight($selector);
-
-                    if (selectorState) {
-                        selectorState = false;
-                        _animate((elapsedPercent: number) => {
-                            _update(selectorHeight * (1 - elapsedPercent));
-                        });
-                    } else {
-                        selectorState = true;
-                        _animate((elapsedPercent: number) => {
-                            _update(selectorHeight * elapsedPercent);
-                        });
-                    }
-                }
-            });
-        });
-
         let $container = $element.querySelector(".container");
-        if ($container) {
-            $container.appendChild($button);
-            addClass($element, ["js-board-selector-wrapper"]);
+        if (!$container) {
+            throw new Error("Header container is empty when it should not.");
+        }
+
+        let $button = $container.querySelector(
+            ".header__button.header__button--burger",
+        );
+        if ($button) {
+            $button.addEventListener("click", e => {
+                e.preventDefault();
+                _render().then(() => {
+                    if ($selector) {
+                        let selectorHeight = BoardSelector.getSelectorHeight($selector);
+
+                        if (selectorState) {
+                            selectorState = false;
+                            _animate((elapsedPercent: number) => {
+                                _update(selectorHeight * (1 - elapsedPercent));
+                            });
+                        } else {
+                            selectorState = true;
+                            _animate((elapsedPercent: number) => {
+                                _update(selectorHeight * elapsedPercent);
+                            });
+                        }
+                    }
+                });
+            });
         }
 
         // Attempt to restore height on resize. Since the resize may cause

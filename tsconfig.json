@@ -9,5 +9,5 @@
         "strictNullChecks": true,
         "target": "ES5"
     },
-    "files": ["app/javascripts/app.ts"]
+    "files": ["assets/app/javascripts/app.ts"]
 }

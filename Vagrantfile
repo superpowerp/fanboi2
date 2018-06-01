@@ -14,8 +14,8 @@ Vagrant.configure("2") do |config|
 
     pkg update
     pkg install -y ca_root_nss git-lite curl ntp bash
-    pkg install -y postgresql10-server node redis memcached yarn
-    pkg install -y bzip2 sqlite3 gmake
+    pkg install -y postgresql10-server node redis memcached
+    pkg install -y bzip2 sqlite3 gmake yarn npm phantomjs
 
     ntpd -qg
 

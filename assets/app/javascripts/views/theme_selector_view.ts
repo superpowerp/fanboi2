@@ -10,36 +10,41 @@ export class ThemeSelectorView {
     constructor(public themes: ITheme[]) {}
 
     render(currentTheme?: string): VNode {
-        return h("div", { className: "js-theme-selector" }, [
-            h("span", { className: "js-theme-selector-title" }, ["Theme"]),
+        return h("ul", { className: "links links--horizontal" }, [
+            h("li", { className: "links__item" }, ["Theme"]),
             this.renderThemes(currentTheme),
         ]);
     }
 
-    private renderThemes(currentTheme?: string): VNode {
-        return h(
-            "ul",
-            { className: "js-theme-selector-list" },
-            this.themes.map((theme: ITheme): VNode => {
-                return h("li", { className: "js-theme-selector-list-item" }, [
+    private renderThemes(currentTheme?: string): VNode[] {
+        return this.themes.map((theme: ITheme): VNode => {
+            let themeSelectorClass = ThemeSelectorView.getSelectorStateClass(
+                theme.identifier,
+                currentTheme,
+            );
+
+            return h(
+                "li",
+                {
+                    className: "links__item" + themeSelectorClass,
+                },
+                [
                     h(
                         "a",
                         {
                             href: "#",
                             dataset: { themeSelectorItem: theme.identifier },
-                            className: ThemeSelectorView.getSelectorStateClass(
-                                theme.identifier,
-                                currentTheme,
-                            ),
                         },
                         [theme.name],
                     ),
-                ]);
-            }),
-        );
+                ],
+            );
+        });
     }
 
     static getSelectorStateClass(identifier: string, currentTheme?: string): string {
-        return currentTheme && currentTheme == identifier ? "current" : "";
+        return currentTheme && currentTheme == identifier
+            ? " links__item--current"
+            : "";
     }
 }

@@ -1,0 +1,33 @@
+/* Partial: post
+ * Styling for individual posts. */
+.post {
+    padding-top: var(--sp-vertical-small);
+    padding-bottom: calc(var(--sp-vertical-small) + var(--lh-default));
+    position: relative;
+
+    &__item {
+        font-size: var(--fs-small);
+
+        &--relocatable {
+            bottom: var(--sp-vertical-small);
+            left: var(--sp-horizontal-normal);
+            position: absolute;
+        }
+    }
+
+    &__container {
+        margin: var(--sp-vertical-smaller) 0;
+
+        &:last-child {
+            padding: 0;
+        }
+    }
+
+    @media (--desktop-viewport) {
+        .post__item {
+            &--relocatable {
+                left: 0;
+            }
+        }
+    }
+}

@@ -4,25 +4,23 @@
 <%inherit file='../partials/_layout.mako' />
 <%def name='title()'>${board.title}</%def>
 % for topic in topics:
-    <div class="topic" data-topic="${topic.id}">
-        <div class="topic-header">
+    <div data-topic="${topic.id}">
+        <div class="panel panel--bordered">
             <div class="container">
-                <h3 class="topic-header-title"><a href="${request.route_path('topic_scoped', board=board.slug, topic=topic.id, query='recent')}">${topic.title}</a></h3>
-                <p class="topic-header-item">Last posted <strong>${datetime.render_datetime(topic.meta.posted_at)}</strong></p>
-                <p class="topic-header-item">Total of <strong>${topic.meta.post_count} posts</strong></p>
+                <h3 class="panel__item util-text-normal"><a href="${request.route_path('topic_scoped', board=board.slug, topic=topic.id, query='recent')}">${topic.title}</a></h3>
+                <p class="panel__item">Last posted ${datetime.render_datetime(topic.meta.posted_at)}</p>
+                <p class="panel__item">Total of ${topic.meta.post_count} posts</p>
             </div>
         </div>
-        <div class="topic-body">
-            % for p in topic.recent_posts(5):
-                ${post.render_post(topic, p, shorten=500)}
-            % endfor
-        </div>
-        <div class="topic-footer">
+        % for p in topic.recent_posts(5):
+            ${post.render_post(topic, p, shorten=500)}
+        % endfor
+        <div class="panel panel--bordered panel--tint">
             <div class="container">
-                <ul class="actions">
-                    <li class="actions-item"><a class="button action" href="${request.route_path('topic_scoped', board=board.slug, topic=topic.id, query='recent')}">Recent posts</a></li>
-                    <li class="actions-item"><a class="button action" href="${request.route_path('topic', board=board.slug, topic=topic.id)}">All posts</a></li>
-                    <li class="actions-item"><a class="button green" href="${request.route_path('topic_scoped', board=board.slug, topic=topic.id, query='recent')}#reply">Reply</a></li>
+                <ul class="panel__item links">
+                    <li class="links__item"><a class="button action" href="${request.route_path('topic_scoped', board=board.slug, topic=topic.id, query='recent')}">Recent posts</a></li>
+                    <li class="links__item"><a class="button action" href="${request.route_path('topic', board=board.slug, topic=topic.id)}">All posts</a></li>
+                    <li class="links__item"><a class="button green" href="${request.route_path('topic_scoped', board=board.slug, topic=topic.id, query='recent')}#reply">Reply</a></li>
                 </ul>
             </div>
         </div>

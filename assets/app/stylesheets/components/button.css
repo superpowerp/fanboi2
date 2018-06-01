@@ -1,0 +1,16 @@
+/** @define button */
+
+/* Block: panel
+ * Generic styled buttons. */
+.button {
+    border-radius: var(--radius);
+    border: 1px solid;
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: var(--fs-normal);
+    line-height: var(--lh-default);
+    margin: 0;
+    outline: none;
+    padding: var(--sp-vertical-input) var(--sp-horizontal-input);
+    text-decoration: none;
+}

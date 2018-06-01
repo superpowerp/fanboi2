@@ -1,0 +1,56 @@
+/** @define panel */
+
+/* Block: panel
+ * Generic styled container for hosting content. */
+.panel {
+    @util clearfix;
+
+    /* Element: item
+     * Part of the panel. */
+    &__item {
+        margin: 0;
+        padding: 0;
+
+        &:first-child {
+            padding-top: var(--sp-vertical-large);
+        }
+
+        &:last-child {
+            padding-bottom: var(--sp-vertical-large);
+        }
+
+        /* Modifier: inset
+         * Remove padding from panel item for element that will set their own paddings. */
+        &--inset {
+            &:first-child,
+            &:last-child {
+                padding: 0;
+            }
+        }
+    }
+
+    /* Modifier: bordered
+     * Add border to the panel. */
+    &--bordered {
+        border-bottom: 1px solid;
+    }
+
+    /* Modifier: unit-link
+     * Panel container to the link element fill all the content area. */
+    &--unit-link {
+        position: relative;
+
+        /* Element: link
+         * Make the link fill the content area. */
+        .panel__link {
+            &:after {
+                bottom: 0;
+                content: " ";
+                left: 0;
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+        }
+    }
+}
