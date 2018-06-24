@@ -1,0 +1,42 @@
+.theme-topaz {
+    .post {
+        &__item {
+            color: var(--topaz-gray3);
+
+            &--inverse {
+                background-color: var(--topaz-gray3);
+                border-color: var(--topaz-gray3);
+                color: var(--topaz-white);
+                font-weight: bold;
+            }
+
+            &--shallow {
+                background-color: var(--topaz-white);
+                border-color: var(--topaz-gray3);
+                color: var(--topaz-gray3);
+                font-weight: bold;
+            }
+
+            &--highlight {
+                background-color: var(--topaz-white);
+                border-color: var(--topaz-white);
+                font-weight: bold;
+            }
+
+            &--relocatable {
+                font-style: italic;
+            }
+        }
+
+        &__container {
+            color: var(--topaz-secondary);
+        }
+
+        @media (--desktop-viewport) {
+            .post__item--relocatable {
+                font-style: normal;
+                font-weight: bold;
+            }
+        }
+    }
+}

@@ -1,3 +1,8 @@
+:root {
+    --post-gap-vertical: 0rem;
+    --post-gap-horizontal: 0.3rem;
+}
+
 /* Partial: post
  * Styling for individual posts. */
 .post {
@@ -6,11 +11,33 @@
     position: relative;
 
     &__item {
+        display: inline-block;
         font-size: var(--fs-small);
+
+        &--inverse,
+        &--shallow,
+        &--highlight {
+            padding: var(--post-gap-vertical) var(--post-gap-horizontal);
+            border: 1px solid;
+
+            /* A quick hack to make item visually middle-aligned, since these elements
+             * are bordered, so the spacing from line-height doesn't get included as
+             * the visual spacing between elements.
+             *
+             * This margin is set to relative of the line-height, e.g. for 1.5em:
+             *
+             *     ------------ <- 0.25em of spacing at the top
+             *     LINE OF TEXT
+             *     ------------ <- 0.25em of spacing at the bottom
+             *
+             * The bottom spacing is what we're doing with the following calculation.
+             */
+            margin-bottom: calc(calc(var(--lh-default) - 1rem) / 2);
+        }
 
         &--relocatable {
             bottom: var(--sp-vertical-small);
-            left: var(--sp-horizontal-normal);
+            left: 0;
             position: absolute;
         }
     }
@@ -24,9 +51,11 @@
     }
 
     @media (--desktop-viewport) {
+        padding-bottom: var(--sp-vertical-smaller);
+
         .post__item {
             &--relocatable {
-                left: 0;
+                position: static;
             }
         }
     }

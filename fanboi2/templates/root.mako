@@ -3,7 +3,7 @@
 <header class="panel panel--inverse">
     <div class="container">
         <h2 class="panel__item panel__item--inset panel__item--header util-text-gray">Welcome, stranger!</h2>
-        <p class="panel__item panel__item--subheader util-text-gray-light">Choose some board to begin.</p>
+        <p class="panel__item panel__item--subheader util-text-gray">Choose some board to begin.</p>
     </div>
 </header>
 <div class="container">

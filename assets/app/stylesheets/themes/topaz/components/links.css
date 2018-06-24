@@ -4,7 +4,7 @@
             &--current {
                 a,
                 a& {
-                    color: var(--topaz-gray2);
+                    color: var(--topaz-gray1);
                     font-weight: bold;
                 }
             }
@@ -16,7 +16,7 @@
 
                 a,
                 a& {
-                    color: var(--topaz-gray2);
+                    color: var(--topaz-gray1);
                 }
 
                 &--current {

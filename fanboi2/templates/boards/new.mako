@@ -3,10 +3,9 @@
 <%inherit file='../partials/_layout.mako' />
 <%def name='title()'>New topic - ${board.title}</%def>
 % if board.agreements:
-    <div class="container">
-        <div class="panel panel--bordered">
+    <div class="panel panel--tint">
+        <div class="container">
             <div class="panel__item">
-                <h2 class="util-text-gray">Agreements</h2>
                 ${formatters.format_markdown(request, board.agreements)}
             </div>
         </div>

@@ -6,8 +6,4 @@
     .util-text-gray {
         color: var(--topaz-gray1);
     }
-
-    .util-text-gray-light {
-        color: var(--topaz-gray2);
-    }
 }
