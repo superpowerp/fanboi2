@@ -1,0 +1,14 @@
+.theme-topaz {
+    .form-group {
+        &__input {
+            border-color: var(--topaz-gray4);
+            transition: border-color var(--animation-timing) linear,
+                box-shadow var(--animation-timing) linear;
+
+            &:focus {
+                border-color: var(--topaz-primary);
+                box-shadow: 0 0 0 0.1rem color(var(--topaz-primary) alpha(20%));
+            }
+        }
+    }
+}

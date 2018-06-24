@@ -1,137 +1,14 @@
-:root {
-    --topaz-primary: #f50000;
-    --topaz-secondary: #1b2326;
+@import "topaz/variables.css";
+@import "topaz/base.css";
 
-    --topaz-bg: #fff;
-    --topaz-white: #fff;
-    --topaz-link: var(--topaz-primary);
-    --topaz-link-hover: color(var(--topaz-secondary) lightness(+25%));
+/* Components */
+@import "topaz/components/button.css";
+@import "topaz/components/form-group.css";
+@import "topaz/components/links.css";
+@import "topaz/components/panel.css";
 
-    --topaz-gray1: color(var(--topaz-secondary) lightness(+20%));
-    --topaz-gray2: color(var(--topaz-secondary) lightness(+30%) saturation(+10%));
-    --topaz-gray3: color(var(--topaz-secondary) lightness(+40%) saturation(+10%));
-    --topaz-gray4: color(var(--topaz-secondary) lightness(+75%) saturation(+10%));
-    --topaz-gray5: color(var(--topaz-secondary) lightness(+82%) saturation(+10%));
-}
+/* Utilities */
+@import "topaz/utilities/text.css";
 
-.theme-topaz {
-    background: var(--topaz-bg);
-    color: var(--topaz-gray1);
-
-    a {
-        color: var(--topaz-link);
-        text-decoration: none;
-
-        &:hover {
-            color: var(--topaz-link-hover);
-        }
-    }
-
-    /* components/button.css
-     * ----------------------------------------------------------------- */
-
-    .button {
-        &--primary {
-            background-color: var(--topaz-primary);
-            border-color: var(--topaz-primary);
-            color: var(--topaz-white);
-        }
-    }
-
-    /* components/form-group.css
-     * ----------------------------------------------------------------- */
-
-    .form-group {
-        &__input {
-            border-color: var(--topaz-gray4);
-            transition: border-color var(--animation-timing) linear,
-                box-shadow var(--animation-timing) linear;
-
-            &:focus {
-                border-color: var(--topaz-primary);
-                box-shadow: 0 0 0 0.1rem color(var(--topaz-primary) alpha(20%));
-            }
-        }
-    }
-
-    /* components/panel.css
-     * ----------------------------------------------------------------- */
-
-    .panel {
-        &--bordered {
-            border-color: var(--topaz-gray5);
-        }
-
-        &--inverse {
-            background-color: var(--topaz-gray5);
-            border-color: var(--topaz-white);
-        }
-
-        &--tint {
-            background-color: var(--topaz-gray4);
-            border-color: var(--topaz-white);
-        }
-    }
-
-    /* components/links.css
-     * ----------------------------------------------------------------- */
-
-    .links {
-        &__item {
-            &--current {
-                a,
-                a& {
-                    color: var(--topaz-gray2);
-                    font-weight: bold;
-                }
-            }
-        }
-
-        &--tabs {
-            .links__item {
-                border-color: var(--topaz-gray5);
-
-                a,
-                a& {
-                    color: var(--topaz-gray2);
-                }
-
-                &--current {
-                    border-color: var(--topaz-primary);
-
-                    a,
-                    a& {
-                        color: var(--topaz-primary);
-                    }
-                }
-
-                a:hover,
-                a:hover& {
-                    color: var(--topaz-primary);
-                }
-            }
-        }
-    }
-
-    /* partials/header.css
-     * ----------------------------------------------------------------- */
-
-    .header {
-        background-color: var(--topaz-gray5);
-    }
-
-    /* utilities/text.css
-     * ----------------------------------------------------------------- */
-
-    .util-text-primary {
-        color: var(--topaz-primary);
-    }
-
-    .util-text-gray {
-        color: var(--topaz-gray1);
-    }
-
-    .util-text-gray-light {
-        color: var(--topaz-gray2);
-    }
-}
+/* Partials */
+@import "topaz/partials/header.css";

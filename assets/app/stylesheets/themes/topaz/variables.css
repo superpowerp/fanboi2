@@ -1,0 +1,15 @@
+:root {
+    --topaz-primary: #f50000;
+    --topaz-secondary: #1b2326;
+
+    --topaz-bg: #fff;
+    --topaz-white: #fff;
+    --topaz-link: var(--topaz-primary);
+    --topaz-link-hover: color(var(--topaz-secondary) lightness(+25%));
+
+    --topaz-gray1: color(var(--topaz-secondary) lightness(+20%));
+    --topaz-gray2: color(var(--topaz-secondary) lightness(+30%) saturation(+10%));
+    --topaz-gray3: color(var(--topaz-secondary) lightness(+40%) saturation(+10%));
+    --topaz-gray4: color(var(--topaz-secondary) lightness(+75%) saturation(+10%));
+    --topaz-gray5: color(var(--topaz-secondary) lightness(+82%) saturation(+10%));
+}

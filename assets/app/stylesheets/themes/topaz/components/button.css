@@ -1,0 +1,9 @@
+.theme-topaz {
+    .button {
+        &--primary {
+            background-color: var(--topaz-primary);
+            border-color: var(--topaz-primary);
+            color: var(--topaz-white);
+        }
+    }
+}

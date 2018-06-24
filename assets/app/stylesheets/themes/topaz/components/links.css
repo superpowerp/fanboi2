@@ -1,0 +1,38 @@
+.theme-topaz {
+    .links {
+        &__item {
+            &--current {
+                a,
+                a& {
+                    color: var(--topaz-gray2);
+                    font-weight: bold;
+                }
+            }
+        }
+
+        &--tabs {
+            .links__item {
+                border-color: var(--topaz-gray5);
+
+                a,
+                a& {
+                    color: var(--topaz-gray2);
+                }
+
+                &--current {
+                    border-color: var(--topaz-primary);
+
+                    a,
+                    a& {
+                        color: var(--topaz-primary);
+                    }
+                }
+
+                a:hover,
+                a:hover& {
+                    color: var(--topaz-primary);
+                }
+            }
+        }
+    }
+}
