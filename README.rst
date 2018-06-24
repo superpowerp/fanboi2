@@ -31,7 +31,7 @@ After all packages are installed and started, you may now clone the application:
 Then setup the application::
 
   $ cd fanboi2/
-  $ make prod
+  $ make
 
 Configure ``.env`` (see the configuring section) and run::
 
@@ -77,7 +77,7 @@ In case you do not want to use Vagrant, you can install the dependencies from th
 You can then configure the application (see configuration section) and run the server::
 
   $ make migrate
-  $ pipenv run honcho start -f Procfile.dev
+  $ make devserver
 
 Once you've made your changes, simply open a `pull request <https://github.com/forloopend/fanboi2/pulls>`_ against the **master** branch. Our reviewer will review and merge the pull request as soon as possible. It would be much appreciated if you could follow the following guidelines:
 

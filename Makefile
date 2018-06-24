@@ -5,11 +5,11 @@ CFLAGS  := "-I/usr/local/include"
 # Prod
 # ----------------------------------------------------------------------
 
-.PHONY: prod init
+.PHONY: all setup
 
-prod: init assets
+all: setup assets
 
-init:
+setup:
 	pip install pipenv --upgrade
 	env \
 		LDFLAGS=$(LDFLAGS) \
@@ -20,11 +20,11 @@ init:
 # Development
 # ----------------------------------------------------------------------
 
-.PHONY: develop devinit devhook devserver
+.PHONY: develop devsetup devhook devserver
 
-develop: devinit assets
+develop: devsetup assets
 
-devinit:
+devsetup:
 	pip install pipenv --upgrade
 	env \
 		LDFLAGS=$(LDFLAGS) \
@@ -44,6 +44,7 @@ devserver:
 .PHONY: assets
 
 assets:
+	yarn install
 	yarn run gulp
 
 # ----------------------------------------------------------------------
