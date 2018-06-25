@@ -14,9 +14,9 @@
         padding: 0;
     }
 
-    /* Modifier: inset
+    /* Modifier: plain
      * Remove padding from the container for content that will set their own padding. */
-    &--inset {
+    &--plain {
         padding: 0;
 
         @media (--desktop-viewport) {

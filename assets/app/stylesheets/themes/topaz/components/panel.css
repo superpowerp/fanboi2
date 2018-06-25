@@ -1,6 +1,7 @@
 .theme-topaz {
     .panel {
-        &--bordered {
+        &--bordered,
+        &--bordered-top {
             border-color: var(--topaz-gray5);
         }
 

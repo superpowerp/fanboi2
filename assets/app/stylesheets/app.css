@@ -12,6 +12,7 @@
 @import "components/panel.css";
 
 /* Utilities */
+@import "utilities/padding.css";
 @import "utilities/positioning.css";
 @import "utilities/text.css";
 

@@ -31,7 +31,7 @@
     <body id="${request.route_name}" class="${formatters.user_theme(request)}">
 
         <header id="top" class="header" data-board-selector="true">
-            <div class="container container--inset header__container">
+            <div class="container container--plain header__container">
                 <a class="header__logo" href="/">Fanboi Channel</a>
                 <a class="header__button icon icon--burger util-pull-left" href="/">Sidebar</a>
                 <a class="header__button icon icon--arrow util-pull-right" href="#bottom">Scroll to bottom</a>
@@ -44,14 +44,14 @@
         % if global_appendix:
             <div class="panel panel--inverse">
                 <div class="container">
-                    <div class="panel__item util-text-small typo-plain">
+                    <div class="panel__item util-padded util-text-small typo-plain">
                         ${global_appendix}
                     </div>
                 </div>
             </div>
         % endif
 
-        <div class="container container--inset">
+        <div class="container container--plain">
             <footer class="footer panel util-text-small" id="bottom">
                 <div class="footer__left" data-theme-selector="true">All contents are responsibility of its poster.</div>
                 <ul class="footer__right links">

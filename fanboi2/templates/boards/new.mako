@@ -2,19 +2,15 @@
 <%include file='_subheader.mako' />
 <%inherit file='../partials/_layout.mako' />
 <%def name='title()'>New topic - ${board.title}</%def>
-% if board.agreements:
-    <div class="panel panel--tint">
-        <div class="container">
-            <div class="panel__item">
-                ${formatters.format_markdown(request, board.agreements)}
-            </div>
-        </div>
-    </div>
-% endif
 <div class="container">
     <form class="panel" action="${request.route_path('board_new', board=board.slug)}" method="post">
-        <div class="panel__item">
-            <h2 class="util-text-gray">New topic</h2>
+        <h2 class="panel__item util-padded util-text-gray">New topic</h2>
+        % if board.agreements:
+            <div class="panel__item util-padded-bottom">
+                ${formatters.format_markdown(request, board.agreements)}
+            </div>
+        % endif
+        <div class="panel__item util-padded-bottom">
             <input type="hidden" name="csrf_token" value="${get_csrf_token()}">
             <div class="form-group${' form-group--error' if form.title.errors else ''}">
                 <label class="form-group__label" for="${form.title.id}">Topic</label>
