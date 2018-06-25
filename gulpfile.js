@@ -150,7 +150,10 @@ gulp.task("styles/app", ["assets"], function() {
                 }),
                 require("autoprefixer"),
                 require("doiuse"),
-                require("colorguard")({ allowEquivalentNotation: true }),
+                require("colorguard")({
+                    allowEquivalentNotation: true,
+                    ignore: ["#f2f5f7"],
+                }),
                 require("postcss-discard-unused"),
                 require("postcss-merge-idents"),
                 require("postcss-reduce-idents"),
