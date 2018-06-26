@@ -1,8 +1,3 @@
-:root {
-    --post-gap-vertical: 0rem;
-    --post-gap-horizontal: 0.3rem;
-}
-
 /* Partial: post
  * Styling for individual posts. */
 .post {
@@ -14,9 +9,9 @@
         display: inline-block;
         font-size: var(--fs-small);
 
-        &--inverse,
-        &--shallow,
-        &--highlight {
+        &--bumped,
+        &--saged,
+        &--name {
             border-radius: var(--radius);
             border: 1px solid;
             padding: var(--post-gap-vertical) var(--post-gap-horizontal);
@@ -36,7 +31,7 @@
             margin-bottom: calc(calc(var(--lh-default) - 1rem) / 2);
         }
 
-        &--relocatable {
+        &--datetime {
             bottom: var(--sp-vertical-small);
             left: 0;
             position: absolute;
@@ -45,13 +40,18 @@
 
     &__container {
         margin: var(--sp-vertical-smaller) 0;
+        overflow-y: auto;
+    }
+
+    &__shortened {
+        font-size: var(--fs-small);
     }
 
     @media (--desktop-viewport) {
         padding-bottom: var(--sp-vertical-smaller);
 
         .post__item {
-            &--relocatable {
+            &--datetime {
                 position: static;
             }
         }

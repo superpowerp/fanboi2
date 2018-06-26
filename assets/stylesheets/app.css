@@ -11,6 +11,8 @@
 @import "components/icon.css";
 @import "components/links.css";
 @import "components/panel.css";
+@import "components/thumbnail-group.css";
+@import "components/thumbnail.css";
 
 /* Utilities */
 @import "utilities/padding.css";
@@ -20,6 +22,7 @@
 /* Partials */
 @import "partials/footer.css";
 @import "partials/header.css";
+@import "partials/ident.css";
 @import "partials/post.css";
 
 /* Themes */

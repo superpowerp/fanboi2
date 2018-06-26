@@ -12,4 +12,5 @@
 
 /* Partials */
 @import "topaz/partials/header.css";
+@import "topaz/partials/ident.css";
 @import "topaz/partials/post.css";

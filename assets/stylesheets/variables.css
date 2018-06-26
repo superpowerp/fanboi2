@@ -35,6 +35,16 @@
     --sp-vertical-larger: 1.3rem;
     --sp-vertical-input: 0.35rem;
 
+    /* Posts */
+    --post-gap-vertical: 0rem;
+    --post-gap-horizontal: 0.3rem;
+
+    /* Thumbnails */
+    --thumbnail-width: 90px;
+    --thumbnail-height: 90px;
+    --thumbnail-gap-vertical: 0.3rem;
+    --thumbnail-gap-horizontal: 0.3rem;
+
     /* Misc */
     --radius: 2px;
     --animation-timing: 0.1s;
