@@ -2,6 +2,10 @@
 # yarn lockfile v1
 
 
+"@csstools/normalize.css@^8.0.0":
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/@csstools/normalize.css/-/normalize.css-8.0.0.tgz#28be09fb27532de6e7b7f0967fd174da29674552"
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -4040,6 +4044,12 @@ postcss-bem-linter@^3.0.0:
     postcss "^6.0.6"
     postcss-resolve-nested-selector "^0.1.1"
 
+postcss-browser-comments@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/postcss-browser-comments/-/postcss-browser-comments-1.0.0.tgz#1189a566f8705369e32e30738d1534085bb8260e"
+  dependencies:
+    postcss "^6.0.22"
+
 postcss-calc@^6.0.0, postcss-calc@^6.0.1:
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/postcss-calc/-/postcss-calc-6.0.1.tgz#3d24171bbf6e7629d422a436ebfe6dd9511f4330"
@@ -4342,6 +4352,15 @@ postcss-normalize-whitespace@^4.0.0-rc.2:
   dependencies:
     postcss "^6.0.0"
     postcss-value-parser "^3.0.0"
+
+postcss-normalize@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/postcss-normalize/-/postcss-normalize-6.0.0.tgz#6441b3ced4578f7b7c3b1529a43d1d0ef466996f"
+  dependencies:
+    "@csstools/normalize.css" "^8.0.0"
+    browserslist "^3.2.8"
+    postcss "^6.0.22"
+    postcss-browser-comments "^1.0.0"
 
 postcss-ordered-values@^4.0.0-rc.2:
   version "4.0.0-rc.2"
@@ -5415,6 +5434,14 @@ stylehacks@^4.0.0-rc.2:
 stylelint-config-recommended@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/stylelint-config-recommended/-/stylelint-config-recommended-2.1.0.tgz#f526d5c771c6811186d9eaedbed02195fee30858"
+
+stylelint-no-unsupported-browser-features@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/stylelint-no-unsupported-browser-features/-/stylelint-no-unsupported-browser-features-3.0.0.tgz#3068bc6d68ad5f87deb54644047b899916524d13"
+  dependencies:
+    doiuse "^4.1.0"
+    lodash "^4.17.4"
+    postcss "^6.0.1"
 
 stylelint-selector-bem-pattern@^2.0.0:
   version "2.0.0"

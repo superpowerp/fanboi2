@@ -19,38 +19,24 @@ var paths = {
     /* Path for storing application-specific assets. */
     app: {
         assets: {
-            base: "assets/app/assets",
-            glob: "assets/app/assets/*",
+            base: "assets/assets",
+            glob: "assets/assets/*",
             entries: [
-                "assets/app/assets/icon.ico",
-                "assets/app/assets/icon.png",
-                "assets/app/assets/touch-icon.png",
+                "assets/assets/icon.ico",
+                "assets/assets/icon.png",
+                "assets/assets/touch-icon.png",
             ],
         },
         stylesheets: {
-            base: "assets/app/stylesheets",
-            glob: "assets/app/stylesheets/**/*.css",
-            entry: "assets/app/stylesheets/app.css",
+            base: "assets/stylesheets",
+            glob: "assets/stylesheets/**/*.css",
+            entry: "assets/stylesheets/app.css",
         },
         javascripts: {
-            base: "assets/app/javascripts",
-            glob: "assets/app/javascripts/**/*.ts",
-            entry: "assets/app/javascripts/app.ts",
+            base: "assets/javascripts",
+            glob: "assets/javascripts/**/*.ts",
+            entry: "assets/javascripts/app.ts",
         },
-    },
-
-    /* Path for storing third-party assets. */
-    vendor: {
-        assets: "assets/vendor/assets/*",
-        stylesheets: "assets/vendor/stylesheets/**/*.css",
-        javascripts: ["assets/vendor/javascripts/**/*.js"],
-    },
-
-    /* Path for storing compatibility assets. */
-    legacy: {
-        assets: "assets/legacy/assets/*",
-        stylesheets: "assets/legacy/stylesheets/**/*.css",
-        javascripts: "assets/legacy/javascripts/**/*.js",
     },
 
     /* Path to output compiled assets to. */
@@ -69,13 +55,7 @@ function logError(error) {
  * ----------------------------------------------------------------------------------- */
 
 gulp.task("assets", function() {
-    return es
-        .merge([
-            gulp.src(paths.app.assets.entries),
-            gulp.src(paths.vendor.assets),
-            gulp.src(paths.legacy.assets),
-        ])
-        .pipe(gulp.dest(paths.dest));
+    return es.merge([gulp.src(paths.app.assets.entries)]).pipe(gulp.dest(paths.dest));
 });
 
 /* Stylesheets
@@ -93,6 +73,7 @@ gulp.task("styles/app", ["assets"], function() {
                 require("postcss-mixins"),
                 require("postcss-nested"),
                 require("lost"),
+                require("postcss-normalize"),
                 require("postcss-utilities")({ textHideMethod: "font" }),
                 require("postcss-custom-media"),
                 require("postcss-custom-properties")({ preserve: false }),
@@ -144,12 +125,11 @@ gulp.task("styles/app", ["assets"], function() {
                 require("postcss-urlrev")({
                     relativePath: paths.dest,
                     replacer: function(url, hash) {
-                        /* Override to make it compatible with app. */
+                        /* Override to make it compatible with the app. */
                         return url + "?h=" + hash.slice(0, 8);
                     },
                 }),
                 require("autoprefixer"),
-                require("doiuse"),
                 require("colorguard")({
                     allowEquivalentNotation: true,
                     ignore: ["#f2f5f7"],
@@ -166,15 +146,7 @@ gulp.task("styles/app", ["assets"], function() {
         .pipe(gulp.dest(paths.dest));
 });
 
-gulp.task("styles/vendor", function() {
-    return gulp
-        .src(paths.vendor.stylesheets)
-        .pipe(concat("vendor.css"))
-        .pipe(postcss([require("cssnano")({ preset: "default" })]))
-        .pipe(gulp.dest(paths.dest));
-});
-
-gulp.task("styles", ["styles/app", "styles/vendor"]);
+gulp.task("styles", ["styles/app"]);
 
 /* JavaScripts
  * ----------------------------------------------------------------------------------- */
@@ -211,19 +183,7 @@ gulp.task("javascripts/vendor", function() {
         .pipe(gulp.dest(paths.dest));
 });
 
-gulp.task("javascripts/legacy", function() {
-    return gulp
-        .src(paths.legacy.javascripts)
-        .pipe(concat("legacy.js"))
-        .pipe(uglify())
-        .pipe(gulp.dest(paths.dest));
-});
-
-gulp.task("javascripts", [
-    "javascripts/app",
-    "javascripts/vendor",
-    "javascripts/legacy",
-]);
+gulp.task("javascripts", ["javascripts/app", "javascripts/vendor"]);
 
 /* Defaults
  * ----------------------------------------------------------------------------------- */
@@ -232,9 +192,5 @@ gulp.task("default", ["assets", "styles", "javascripts"]);
 
 gulp.task("watch", ["default"], function() {
     gulp.watch(paths.app.stylesheets.glob, ["styles/app"]);
-    gulp.watch(paths.vendor.stylesheets, ["styles/vendor"]);
-
     gulp.watch(paths.app.javascripts.glob, ["javascripts/app"]);
-    gulp.watch(paths.vendor.javascripts, ["javascripts/vendor"]);
-    gulp.watch(paths.legacy.javascripts, ["javascripts/legacy"]);
 });

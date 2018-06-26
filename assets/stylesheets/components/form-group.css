@@ -3,10 +3,8 @@
 /* Element: form-group
  * Provides a group of form elements. */
 .form-group {
-    margin-bottom: var(--sp-vertical-small);
-
-    &:last-child {
-        margin-bottom: 0;
+    + .form-group {
+        margin-top: var(--sp-vertical-small);
     }
 
     &__label {

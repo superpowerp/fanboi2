@@ -6,3 +6,8 @@ html {
     min-width: var(--bp-mobile);
     text-rendering: optimizeLegibility;
 }
+
+body {
+    margin: 0;
+    padding: 0;
+}

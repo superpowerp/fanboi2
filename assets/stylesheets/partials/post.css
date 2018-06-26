@@ -17,8 +17,9 @@
         &--inverse,
         &--shallow,
         &--highlight {
-            padding: var(--post-gap-vertical) var(--post-gap-horizontal);
+            border-radius: var(--radius);
             border: 1px solid;
+            padding: var(--post-gap-vertical) var(--post-gap-horizontal);
 
             /* A quick hack to make item visually middle-aligned, since these elements
              * are bordered, so the spacing from line-height doesn't get included as
@@ -44,10 +45,6 @@
 
     &__container {
         margin: var(--sp-vertical-smaller) 0;
-
-        &:last-child {
-            padding: 0;
-        }
     }
 
     @media (--desktop-viewport) {

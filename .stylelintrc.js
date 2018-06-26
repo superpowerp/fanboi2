@@ -18,12 +18,15 @@ function bemSelector(block, presetOptions) {
 
 module.exports = {
     extends: "stylelint-config-recommended",
-    plugins: ["stylelint-selector-bem-pattern"],
+    plugins: [
+        "stylelint-selector-bem-pattern",
+        "stylelint-no-unsupported-browser-features",
+    ],
     rules: {
         "at-rule-no-unknown": [
             true,
             {
-                ignoreAtRules: ["util", "lost"],
+                ignoreAtRules: ["util", "lost", "import-normalize"],
             },
         ],
         "property-no-unknown": [
