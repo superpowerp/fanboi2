@@ -9,6 +9,12 @@
         display: inline-block;
         font-size: var(--fs-small);
 
+        &--bumped {
+            transition: color var(--animation-timing) var(--animation-timing-fn),
+                background-color var(--animation-timing) var(--animation-timing-fn),
+                border-color var(--animation-timing) var(--animation-timing-fn);
+        }
+
         &--bumped,
         &--saged,
         &--name {

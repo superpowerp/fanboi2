@@ -11,6 +11,11 @@
     --fs-small: 0.9rem;
     --fs-smaller: 0.8rem;
 
+    /* Typography */
+    --font-base: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial;
+    --font-emoji: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --font-family: var(--font-base), sans-serif, var(--font-emoji);
+
     /* Line heights */
     --lh-default: 1.5rem;
 
@@ -25,7 +30,6 @@
     --sp-horizontal-normal: 0.9rem;
     --sp-horizontal-large: 1.1rem;
     --sp-horizontal-larger: 1.3rem;
-    --sp-horizontal-input: 0.45em;
 
     /* Horizontal spacings */
     --sp-vertical-smaller: 0.5rem;
@@ -33,11 +37,17 @@
     --sp-vertical-normal: 0.9rem;
     --sp-vertical-large: 1.1rem;
     --sp-vertical-larger: 1.3rem;
-    --sp-vertical-input: 0.35rem;
+
+    /* Input */
+    --input-gap-vertical: 0.35rem;
+    --input-gap-horizontal: 0.5em;
+
+    /* Bottons */
+    --button-gap-vertical: 0.2rem;
 
     /* Posts */
     --post-gap-vertical: 0rem;
-    --post-gap-horizontal: 0.3rem;
+    --post-gap-horizontal: 0.25rem;
 
     /* Thumbnails */
     --thumbnail-width: 90px;
@@ -47,5 +57,6 @@
 
     /* Misc */
     --radius: 2px;
-    --animation-timing: 0.1s;
+    --animation-timing: 0.2s;
+    --animation-timing-fn: ease-in;
 }

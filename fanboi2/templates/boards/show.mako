@@ -17,11 +17,9 @@
         % endfor
         <div class="panel panel--bordered panel--tint util-padded">
             <div class="container">
-                <ul class="panel__item links">
-                    <li class="links__item"><a class="button action" href="${request.route_path('topic_scoped', board=board.slug, topic=topic.id, query='recent')}">Recent posts</a></li>
-                    <li class="links__item"><a class="button action" href="${request.route_path('topic', board=board.slug, topic=topic.id)}">All posts</a></li>
-                    <li class="links__item"><a class="button green" href="${request.route_path('topic_scoped', board=board.slug, topic=topic.id, query='recent')}#reply">Reply</a></li>
-                </ul>
+                <a class="button button--action button--mobile-block" href="${request.route_path('topic_scoped', board=board.slug, topic=topic.id, query='recent')}">Recent posts</a>
+                <a class="button button--action button--mobile-block" href="${request.route_path('topic', board=board.slug, topic=topic.id)}">All posts</a>
+                <a class="button button--success button--mobile-block" href="${request.route_path('topic_scoped', board=board.slug, topic=topic.id, query='recent')}#reply">Reply</a>
             </div>
         </div>
     </div>

@@ -16,11 +16,12 @@
         border: 1px solid;
         box-sizing: border-box;
         display: block;
+        font-family: var(--font-family);
         font-size: var(--fs-normal);
         line-height: var(--lh-default);
         margin: 0;
         max-width: 100%;
-        padding: var(--sp-vertical-input) var(--sp-horizontal-input);
+        padding: var(--input-gap-vertical) var(--input-gap-horizontal);
         width: 100%;
 
         /* Default styling reset. */

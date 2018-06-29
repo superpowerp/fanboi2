@@ -2,6 +2,9 @@
     --topaz-primary: #f50000;
     --topaz-secondary: #1f2b33;
 
+    --topaz-success: #32b643;
+    --topaz-error: #fc2e05;
+
     --topaz-bg: #fff;
     --topaz-white: #fff;
     --topaz-link: var(--topaz-primary);

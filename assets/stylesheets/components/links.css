@@ -27,22 +27,11 @@
     }
 
     @media (--tablet-viewport) {
-        .links__item {
-            display: block;
-            float: none;
-            margin: 0;
-        }
-
-        &--horizontal {
+        &--tablet-vertical {
             .links__item {
-                float: left;
-                margin-right: var(--sp-horizontal-small);
-            }
-        }
-
-        &--tabs {
-            .links__item {
-                margin: 0 var(--sp-horizontal-large) 0 0;
+                display: block;
+                float: none;
+                margin: 0;
             }
         }
     }

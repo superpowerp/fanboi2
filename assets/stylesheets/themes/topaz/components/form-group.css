@@ -6,12 +6,12 @@
 
         &__input {
             border-color: var(--topaz-gray4);
-            transition: border-color var(--animation-timing) linear,
-                box-shadow var(--animation-timing) linear;
+            transition: border-color var(--animation-timing) var(--animation-timing-fn),
+                box-shadow var(--animation-timing) var(--animation-timing-fn);
 
             &:focus {
                 border-color: var(--topaz-primary);
-                box-shadow: 0 0 0 0.1rem color(var(--topaz-primary) l(+43%));
+                box-shadow: 0 0 0 0.15rem color(var(--topaz-primary) l(+43%));
             }
         }
     }

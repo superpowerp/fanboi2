@@ -51,7 +51,7 @@
         <div class="container container--plain">
             <footer class="footer panel util-text-small" id="bottom">
                 <div class="footer__left" data-theme-selector="true">All contents are responsibility of its poster.</div>
-                <ul class="footer__right links">
+                <ul class="footer__right links links--tablet-vertical">
                     <li class="links__item"><a href="${request.route_path('api_root')}">API documentation</a></li>
                     <li class="links__item"><a href="https://github.com/forloopend/fanboi2">Source code</a></li>
                 </ul>

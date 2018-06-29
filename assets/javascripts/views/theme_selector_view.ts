@@ -10,7 +10,7 @@ export class ThemeSelectorView {
     constructor(public themes: ITheme[]) {}
 
     render(currentTheme?: string): VNode {
-        return h("ul", { className: "links links--horizontal" }, [
+        return h("ul", { className: "links" }, [
             h("li", { className: "links__item" }, ["Theme"]),
             this.renderThemes(currentTheme),
         ]);

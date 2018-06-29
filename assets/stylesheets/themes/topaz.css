@@ -6,6 +6,7 @@
 @import "topaz/components/form-group.css";
 @import "topaz/components/links.css";
 @import "topaz/components/panel.css";
+@import "topaz/components/tabs.css";
 
 /* Utilities */
 @import "topaz/utilities/text.css";
