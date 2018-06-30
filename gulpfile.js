@@ -140,7 +140,14 @@ gulp.task("styles/app", ["assets"], function() {
                 require("postcss-reduce-idents"),
                 require("postcss-zindex"),
                 require("cssnano")({
-                    preset: "default",
+                    preset: [
+                        "default",
+                        {
+                            discardComments: {
+                                removeAll: true,
+                            },
+                        },
+                    ],
                 }),
             ]).on("error", logError),
         )
