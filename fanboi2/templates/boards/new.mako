@@ -2,8 +2,8 @@
 <%include file='_subheader.mako' />
 <%inherit file='../partials/_layout.mako' />
 <%def name='title()'>New topic - ${board.title}</%def>
-<div class="container">
-    <form class="panel" action="${request.route_path('board_new', board=board.slug)}" method="post">
+<form class="panel panel--shadowed" action="${request.route_path('board_new', board=board.slug)}" method="post">
+    <div class="container">
         <h2 class="panel__item util-padded util-text-gray">New topic</h2>
         % if board.agreements:
             <div class="panel__item util-padded-bottom">
@@ -30,5 +30,5 @@
                 <button class="button button--primary" type="submit">New Topic</button>
             </div>
         </div>
-    </form>
-</div>
+    </div>
+</form>

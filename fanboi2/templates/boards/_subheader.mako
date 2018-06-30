@@ -1,5 +1,5 @@
 <%namespace name="formatters" module="fanboi2.helpers.formatters" />
-<header class="panel panel--inverse">
+<header class="panel panel--inverse panel--shadowed">
     <div class="container">
         <h2 class="panel__item"><a class="util-text-gray" href="${request.route_path('board', board=board.slug)}">${board.title}</a></h2>
         <p class="panel__item util-text-gray">${board.description}</p>

@@ -132,7 +132,7 @@ gulp.task("styles/app", ["assets"], function() {
                 require("autoprefixer"),
                 require("colorguard")({
                     allowEquivalentNotation: true,
-                    ignore: ["#f2f5f7"],
+                    ignore: ["#f2f5f7", "#d7e0e5"],
                 }),
                 require("postcss-discard-unused"),
                 require("postcss-merge-idents"),

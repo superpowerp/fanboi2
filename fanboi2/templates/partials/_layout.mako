@@ -39,7 +39,7 @@
 
         <% global_appendix = partials.global_appendix(request) %>
         % if global_appendix:
-            <div class="panel panel--inverse">
+            <div class="panel panel--inverse panel--shadowed util-backdrop">
                 <div class="container">
                     <div class="panel__item util-padded util-text-small typo-plain">
                         ${global_appendix}

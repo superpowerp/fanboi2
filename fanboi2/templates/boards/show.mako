@@ -15,7 +15,7 @@
         % for p in topic.recent_posts(5):
             ${post.render_post(topic, p, shorten=500)}
         % endfor
-        <div class="panel panel--bordered panel--tint util-padded">
+        <div class="panel panel--shadowed panel--tint util-padded">
             <div class="container">
                 <a class="button button--action button--mobile-block" href="${request.route_path('topic_scoped', board=board.slug, topic=topic.id, query='recent')}">Recent posts</a>
                 <a class="button button--action button--mobile-block" href="${request.route_path('topic', board=board.slug, topic=topic.id)}">All posts</a>

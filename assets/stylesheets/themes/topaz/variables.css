@@ -1,14 +1,17 @@
 :root {
-    --topaz-primary: #f50000;
+    --topaz-primary: #fc2e05;
     --topaz-secondary: #1f2b33;
 
-    --topaz-success: #32b643;
-    --topaz-error: #fc2e05;
+    --topaz-success: #1fba41;
+    --topaz-error: #ff0000;
 
     --topaz-bg: #fff;
     --topaz-white: #fff;
     --topaz-link: var(--topaz-primary);
     --topaz-link-hover: color(var(--topaz-secondary) lightness(+25%));
+
+    --topaz-shadow1: var(--topaz-gray4);
+    --topaz-shadow2: color(var(--topaz-gray4) l(-5%));
 
     --topaz-gray1: color(var(--topaz-secondary) l(+20%) s(-3%));
     --topaz-gray2: color(var(--topaz-secondary) l(+30%) s(-3%));

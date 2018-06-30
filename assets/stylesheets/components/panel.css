@@ -36,6 +36,13 @@
         border-top: 1px solid;
     }
 
+    /* Modifier: shadowed
+     * Drop shadow at the bottom of the panel. */
+    &--shadowed {
+        position: relative;
+        z-index: 1;
+    }
+
     /* Modifier: unit-link
      * Panel container to the link element fill all the content area. */
     &--unit-link {

@@ -36,12 +36,12 @@
 
         &--success {
             background-color: var(--topaz-success);
-            border-color: color(var(--topaz-success) l(-3%));
+            border-color: color(var(--topaz-success) l(-5%));
             color: var(--topaz-white);
 
             &:hover {
-                background-color: color(var(--topaz-success) l(+5%));
-                border-color: var(--topaz-success);
+                background-color: color(var(--topaz-success) l(+3%));
+                border-color: color(var(--topaz-success) l(-8%));
                 color: var(--topaz-white);
             }
         }

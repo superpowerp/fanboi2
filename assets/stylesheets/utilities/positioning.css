@@ -11,3 +11,9 @@
 .util-pull-left {
     float: left;
 }
+
+/* Utility: util-backdrop
+ * Reset the z-index of the element. */
+.util-backdrop {
+    z-index: 0;
+}

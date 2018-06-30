@@ -1,6 +1,6 @@
 <%namespace name='formatters' module='fanboi2.helpers.formatters' />
 <%inherit file='partials/_layout.mako' />
-<header class="panel panel--inverse">
+<header class="panel panel--inverse panel--shadowed">
     <div class="container">
         <h2 class="panel__item panel__item--header util-text-gray">Welcome, stranger!</h2>
         <p class="panel__item panel__item--subheader util-padded-bottom util-text-gray">Choose some board to begin.</p>
