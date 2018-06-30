@@ -1,4 +1,6 @@
 @import "normalize.css";
+
+/* Global */
 @import "variables.css";
 @import "typography.css";
 @import "base.css";

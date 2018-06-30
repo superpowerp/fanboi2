@@ -73,7 +73,8 @@ gulp.task("styles/app", ["assets"], function() {
                 require("postcss-mixins"),
                 require("postcss-nested"),
                 require("lost"),
-                require("postcss-normalize"),
+                /* Note: allowDuplicates is needed to allow reload to work properly. */
+                require("postcss-normalize")({ allowDuplicates: true }),
                 require("postcss-utilities")({ textHideMethod: "font" }),
                 require("postcss-custom-media"),
                 require("postcss-custom-properties")({ preserve: false }),
