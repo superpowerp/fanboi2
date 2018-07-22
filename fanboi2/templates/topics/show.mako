@@ -5,23 +5,27 @@
 <%def name='header()'><link rel="canonical" href="${request.route_url('topic', board=board.slug, topic=topic.id)}"></%def>
 <div data-topic="${topic.id}">
 % if posts:
-    % if posts[0].number != 1:
-    <div class="topic-subheader">
+    <div class="panel panel--shadowed panel--unit-link">
         <div class="container">
-            <ul class="actions">
-                <a href="${request.route_path('topic_scoped', board=board.slug, topic=topic.id, query="1-%s" % posts[-1].number)}">
-                    % if posts[0].number <= 2:
-                    <span class="topic-subheader-item number">1</span>
-                    <span class="topic-subheader-item">Load previous post</span>
-                    % else:
-                    <span class="topic-subheader-item number">1-${posts[0].number - 1}</span>
-                    <span class="topic-subheader-item">Load previous posts</span>
-                    % endif
-                </a>
-            </ul>
+            % if posts[0].number != 1:
+                <div class="post post--plain">
+                    <div class="post__item">
+                        <a class="panel__link" href="${request.route_path('topic_scoped', board=board.slug, topic=topic.id, query="1-%s" % posts[-1].number)}">
+                            % if posts[0].number <= 2:
+                                <span class="post__item post__item--bumped">1</span>
+                                <span class="post__item util-text-gray">Load previous post</span>
+                            % else:
+                                <span class="post__item post__item--bumped">1-${posts[0].number - 1}</span>
+                                <span class="post__item util-text-gray">Load previous posts</span>
+                            % endif
+                        </a>
+                    </div>
+                </div>
+            % else:
+                xx
+            % endif
         </div>
     </div>
-    % endif
     % for p in posts:
         ${post.render_post(topic, p)}
     % endfor

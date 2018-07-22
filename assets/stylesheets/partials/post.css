@@ -5,6 +5,14 @@
     padding-bottom: calc(var(--sp-vertical-small) + var(--lh-default));
     position: relative;
 
+    /* Modifier: plain
+     * Reset padding from the container for content that is pseudo-post. */
+    &--plain {
+        padding-bottom: var(--sp-vertical-smaller);
+    }
+
+    /* Element: post
+     * Represent individual item for a post. */
     &__item {
         display: inline-block;
         font-size: var(--fs-small);

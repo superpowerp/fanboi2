@@ -1,5 +1,9 @@
 .theme-topaz {
     .header {
         background-color: var(--topaz-gray5);
+
+        &--plain {
+            background-color: var(--topaz-white);
+        }
     }
 }

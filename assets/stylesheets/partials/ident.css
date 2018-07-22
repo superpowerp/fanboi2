@@ -1,6 +1,8 @@
 /* Partial: ident
  * Styling for idents. */
 .ident {
+    /* Modifier: ident_admin
+     * Ident styling for site administrator. */
     &--ident_admin {
         border-radius: var(--radius);
         border: 1px solid;
